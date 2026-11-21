@@ -10,7 +10,7 @@
   <meta property="og:description" content="Robot learning, VLAs, and multimodal agents at USC.">
   <meta property="og:image" content="assets/img/profile.jpg">
   <script>
-    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+    var t = "dark"; try { t = localStorage.getItem("theme") || "dark"; } catch (e) {} document.documentElement.setAttribute("data-theme", t);
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
