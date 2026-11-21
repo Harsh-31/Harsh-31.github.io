@@ -24,7 +24,7 @@
       themeBtn.addEventListener("click", function () {
         var next = currentTheme() === "dark" ? "light" : "dark";
         root.setAttribute("data-theme", next);
-        try { localStorage.setItem("theme", next); } catch (e) {}
+        try { localStorage.setItem("theme-v2", next); } catch (e) {}
         updateIcon();
       });
     }
