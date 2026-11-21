@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | Harsh Sharma</title>
+  <meta name="description" content="Research and engineering projects by Harsh Sharma.">
+  <script>
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><span class="first">Harsh</span> Sharma</a>
+      <div style="display:flex;align-items:center;">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">About</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a class="active" href="projects.html">Projects</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="post-header">
+      <h1 class="page-title">Projects</h1>
+      <p class="post-description">Research and engineering projects in robot learning, ML systems, and on-device AI.</p>
+    </header>
+
+    <!-- To link a card to GitHub, wrap the <h3> text in <a href="..."> -->
+
+    <h2>Robot Learning &amp; Embodied AI</h2>
+    <div class="projects">
+      <div class="project-card">
+        <div class="category">Vision-Language-Action</div>
+        <h3>GroundedVLA: 3D Spatial Grounding for VLAs</h3>
+        <p>Post-trained 9 LoRA-adapted &pi;0.5 policies on 6 LIBERO-90 tasks with a ~5M-param adapter for 2D/3D spatial inputs.
+          Across ~5,000 perturbed episodes, baseline success fell from 99% to 22.5%; 720 counterfactual tests traced failures to ignored spatial inputs.</p>
+        <div class="tags"><span class="tag">JAX</span><span class="tag">OpenPI</span><span class="tag">&pi;0.5</span><span class="tag">LoRA</span><span class="tag">LIBERO</span><span class="tag">MuJoCo</span></div>
+      </div>
+      <div class="project-card">
+        <div class="category">Imitation Learning</div>
+        <h3>Robot Imitation Learning: Data Efficiency Study</h3>
+        <p>Trained a PPO Franka Panda cube-lifting expert to 98% success and collected 110 demos. Nine ACT policies on 25/50/100 demos
+          raised mean success from 14% to 69% on 100 unseen starts.</p>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">JAX</span><span class="tag">ACT</span><span class="tag">MuJoCo</span><span class="tag">Slurm</span></div>
+      </div>
+      <div class="project-card">
+        <div class="category">Dexterous Manipulation</div>
+        <h3>Dexterous In-Hand Cube Rotation</h3>
+        <p>Trained a PPO policy to rotate a cube with a simulated LEAP hand; ran controlled reward-shaping studies, including fingertip-contact
+          incentives, measuring effects on rotation, grasp stability, and learned behavior.</p>
+        <div class="tags"><span class="tag">MuJoCo</span><span class="tag">MJLab</span><span class="tag">RSL-RL</span><span class="tag">PPO</span><span class="tag">W&amp;B</span></div>
+      </div>
+    </div>
+
+    <h2>ML Systems &amp; Efficient Learning</h2>
+    <div class="projects">
+      <div class="project-card">
+        <div class="category">GPU Kernels</div>
+        <h3>INT4 Quantized LLM Inference Kernels</h3>
+        <p>W4A16 benchmark for INT4 Llama-3-8B layers on A100 vs. cuBLAS, Marlin, and TorchAO; fused-unpack split-K Triton kernels for 108 SMs.
+          Found and fixed an L2-cache flush artifact that inflated latency up to 1.65&times;.</p>
+        <div class="tags"><span class="tag">Triton</span><span class="tag">CUDA</span><span class="tag">A100</span><span class="tag">Nsight Compute</span></div>
+      </div>
+      <div class="project-card">
+        <div class="category">Parameter-Efficient Fine-Tuning</div>
+        <h3>Curvature-Guided Rank Selection for LoRA</h3>
+        <p>14-rank ViT-Base/16 LoRA sweep on CIFAR-100; Fisher trace strongly correlated with test accuracy. Curvature-guided rank adaptation
+          matched accuracy with fewer parameters than fixed-rank baselines.</p>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">LoRA</span><span class="tag">ViT</span></div>
+      </div>
+    </div>
+
+    <h2>On-Device AI</h2>
+    <div class="projects">
+      <div class="project-card">
+        <div class="category">Edge AI</div>
+        <h3>EdgeGate: Edge AI Access Control</h3>
+        <p>End-to-end access control on Snapdragon X Elite: 1.71 ms inference with 188/188 layers on the Hexagon NPU and zero CPU fallback
+          after W8A16 optimization, driving an Arduino Uno Q over RPC for physical actuation.</p>
+        <div class="tags"><span class="tag">Snapdragon</span><span class="tag">Hexagon NPU</span><span class="tag">Arduino</span><span class="tag">RPC</span></div>
+      </div>
+      <div class="project-card">
+        <div class="category">Computer Vision</div>
+        <h3>EcoSort AI: On-Device Waste Classification</h3>
+        <p>Real-time Apple Silicon pipeline at 6.34 ms model latency. FP16 Core ML conversion halved package size (5.9 &rarr; 3.0 MB) while
+          keeping 88.8% test accuracy.</p>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">MobileNetV3</span><span class="tag">Core ML</span><span class="tag">OpenCV</span></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; Copyright <span id="year">2026</span> Harsh Sharma. Inspired by the <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener">al-folio</a> theme.
+  </footer>
+
+</body>
+</html>

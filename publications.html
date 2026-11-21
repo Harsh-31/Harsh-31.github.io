@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications | Harsh Sharma</title>
+  <meta name="description" content="Publications by Harsh Sharma.">
+  <script>
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="index.html"><span class="first">Harsh</span> Sharma</a>
+      <div style="display:flex;align-items:center;">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">About</a></li>
+          <li><a class="active" href="publications.html">Publications</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="post-header">
+      <h1 class="page-title">Publications</h1>
+      <p class="post-description">Publications in reverse chronological order. <span class="me">Underline</span> denotes me.</p>
+    </header>
+
+    <h2 class="year-heading">2026</h2>
+    <ol class="bibliography">
+      <li>
+        <div class="pub-preview"><abbr class="badge" title="NeurIPS 2026 Workshop">NeurIPS-W</abbr></div>
+        <div class="pub-body">
+          <div class="pub-title"><a href="#">House Rules: A Benchmark for Agents under Changing Requirements</a></div>
+          <!-- TODO: replace with the full author list, e.g. "Author A, <span class="me">Harsh Sharma</span>, Author B" -->
+          <div class="pub-authors"><span class="me">Harsh Sharma</span>, et al.</div>
+          <div class="pub-venue">NeurIPS 2026 Workshop (NEMO), 2026</div>
+          <div class="pub-links">
+            <button data-toggle="abs-houserules" aria-expanded="false">Abs</button>
+            <button data-toggle="bib-houserules" aria-expanded="false">BibTeX</button>
+          </div>
+          <div class="pub-hidden abstract" id="abs-houserules">
+            <!-- TODO: paste the paper abstract here -->
+            A benchmark for evaluating how agents adapt when the rules and requirements of their task change during execution.
+          </div>
+          <div class="pub-hidden bibtex" id="bib-houserules"><pre>@inproceedings{sharma2026houserules,
+  title     = {House Rules: A Benchmark for Agents under Changing Requirements},
+  author    = {Sharma, Harsh and others},
+  booktitle = {NeurIPS 2026 Workshop (NEMO)},
+  year      = {2026}
+}</pre></div>
+        </div>
+      </li>
+    </ol>
+
+    <h2 class="year-heading">Research Reports</h2>
+    <p class="post-description" style="margin-bottom:0.5rem;">Course and independent research projects with written reports.</p>
+    <ol class="bibliography">
+      <li>
+        <div class="pub-preview"><abbr class="badge" title="Project report">Report</abbr></div>
+        <div class="pub-body">
+          <div class="pub-title">GroundedVLA: 3D Spatial Grounding for Vision-Language-Action Models</div>
+          <div class="pub-authors"><span class="me">Harsh Sharma</span></div>
+          <div class="pub-venue">Graduate research project, University of Southern California</div>
+          <div class="pub-links">
+            <button data-toggle="abs-groundedvla" aria-expanded="false">Abs</button>
+            <!-- <a href="#">Code</a> -->
+          </div>
+          <div class="pub-hidden abstract" id="abs-groundedvla">
+            Post-trained 9 LoRA-adapted &pi;0.5 VLA policies on 6 LIBERO-90 tasks with a ~5M-parameter adapter for 2D/3D spatial
+            inputs, using a multimodal training set of 300 demonstrations (~37K frames) with validated camera projections.
+            Behavior evaluations over ~5,000 perturbed episodes showed baseline success falling from 99% to 22.5%, and 720
+            counterfactual tests traced failures to policies ignoring the spatial inputs.
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="pub-preview"><abbr class="badge" title="Project report">Report</abbr></div>
+        <div class="pub-body">
+          <div class="pub-title">Robot Imitation Learning: A Data Efficiency Study with Action Chunking Transformers</div>
+          <div class="pub-authors"><span class="me">Harsh Sharma</span></div>
+          <div class="pub-venue">Graduate research project, University of Southern California</div>
+          <div class="pub-links">
+            <button data-toggle="abs-act" aria-expanded="false">Abs</button>
+          </div>
+          <div class="pub-hidden abstract" id="abs-act">
+            Trained a PPO expert to 98% success on simulated Franka Panda cube lifting and collected 110 demonstrations. Nine ACT
+            policies trained on 25, 50, and 100 demos raised mean success from 14% to 69% across 100 unseen starts. Uncorrected
+            missed grasps remained a key failure mode, showing that similarity to training demonstrations alone did not ensure success.
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="pub-preview"><abbr class="badge" title="Project report">Report</abbr></div>
+        <div class="pub-body">
+          <div class="pub-title">Curvature-Guided Rank Selection for Parameter-Efficient Fine-Tuning</div>
+          <div class="pub-authors"><span class="me">Harsh Sharma</span></div>
+          <div class="pub-venue">Graduate research project, University of Southern California</div>
+          <div class="pub-links">
+            <button data-toggle="abs-curv" aria-expanded="false">Abs</button>
+          </div>
+          <div class="pub-hidden abstract" id="abs-curv">
+            A 14-rank LoRA sweep on ViT-Base/16 for CIFAR-100 with diagonal Fisher curvature analysis found that Fisher trace
+            correlates strongly with test accuracy. An online curvature-guided rank adaptation method achieved competitive accuracy
+            with fewer average parameters than fixed-rank baselines.
+          </div>
+        </div>
+      </li>
+    </ol>
+  </main>
+
+  <footer>
+    &copy; Copyright <span id="year">2026</span> Harsh Sharma. Inspired by the <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener">al-folio</a> theme.
+  </footer>
+
+</body>
+</html>
